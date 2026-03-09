@@ -6,30 +6,32 @@
 }
 
 nav {
-  position: relative;
-  float: left;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
 }
 
-ul {
+nav ul {
   list-style: none;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
 }
 
-li {
-  background-color: #333;
-  display: block;
-  float: left;
-  padding: 1rem;
+nav li {
+  padding: 10px;
   position: relative;
-  text-decoration: none;
   transition-duration: 0.5s;
+  
 }
 
 li a {
   color: white;
   text-decoration: none;
-  background-color: transparent;
+  border-radius: 10px;
 }
 
 li ul {
@@ -41,11 +43,11 @@ li ul {
   margin-top: 1rem;
   left: 0;
   display: none;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  
 }
 
 li ul li {
-  clear: both;
   width: 100%;
 }
 
@@ -70,14 +72,14 @@ ul li ul:focus {
   display: block;
 }
 
+/* CARROSSEL */
+
 .container {
   overflow: hidden;
-  /* hidden Esconde os elementos que ultrapassam o container */
 }
 
 .carousel {
   position: relative;
-  /* O carrossel é posicionado relativamente ao elemento pai */
 }
 
 .carousel-inner {
@@ -85,11 +87,6 @@ ul li ul:focus {
   overflow: hidden;
   height: 80vh;
   flex-wrap: nowrap;
-
-  /* Exibe os elementos em linha
-   Esconde os elementos que ultrapassam 
-  Altura igual a 80% da altura da tela 
-   Impede que os elementos quebrem para outra linha */
 }
 
 .slide {
@@ -144,6 +141,8 @@ ul li ul:focus {
   border: 10px solid #2596be;
 }
 
+/* FOOTER */
+
 footer {
   height: 20vh;
   width: 100%;
@@ -161,10 +160,14 @@ footer {
   justify-content: center;
 }
 
-#bloco2 {
-  background-color: white;
-  height: 20vh;
-  width: 40%;
+#bloco2,
+h4,
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
 }
 
 #bloco3 {
@@ -175,6 +178,8 @@ footer {
   height: 20vh;
   width: 30%;
 }
+
+/* WHATSAPP */
 
 @media screen and (min-width: 667px) {
   .floater-whatsapp {
@@ -192,5 +197,6 @@ footer {
     color: var(--gray-0);
     border: 2px solid var(--gray-0);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
   }
 }
