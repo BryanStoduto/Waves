@@ -151,27 +151,15 @@ footer {
   justify-content: space-between;
 }
 
-#bloco1 {
-  background-color: green;
-  height: 20vh;
-  width: 30%;
+#bloco1, h4, p {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-#bloco2,
-h4,
-p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 4px;
+  height: 20vh;
+  width: 40%;
 }
 
-#bloco3 {
-  background-color: green;
+#bloco2{
   display: flex;
   align-items: end;
   justify-content: end;
@@ -183,7 +171,7 @@ p {
 
 @media screen and (min-width: 667px) {
   .floater-whatsapp {
-    position: fixed;
+    position:end;
     bottom: 1.5rem;
     right: 1.5rem;
     background: var(--green-50);
@@ -197,6 +185,6 @@ p {
     color: var(--gray-0);
     border: 2px solid var(--gray-0);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
-    margin-bottom: 20px;
+    margin-right: 20px;
   }
 }
