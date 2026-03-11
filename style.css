@@ -9,7 +9,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 
 nav ul {
@@ -18,11 +18,11 @@ nav ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 80vh;
 }
 
 nav li {
-  padding: 10px;
+  padding: 12px;
   position: relative;
   transition-duration: 0.5s;
   
@@ -32,6 +32,7 @@ li a {
   color: white;
   text-decoration: none;
   border-radius: 10px;
+  padding: 5px;
 }
 
 li ul {
@@ -76,10 +77,12 @@ ul li ul:focus {
 
 .container {
   overflow: hidden;
+  
 }
 
 .carousel {
   position: relative;
+  
 }
 
 .carousel-inner {
@@ -87,12 +90,14 @@ ul li ul:focus {
   overflow: hidden;
   height: 80vh;
   flex-wrap: nowrap;
+  
 }
 
 .slide {
   flex: 0 0 100%;
   height: 100%;
   transition: 0.5s ease-in-out;
+  
 }
 
 .slide img {
@@ -113,8 +118,9 @@ ul li ul:focus {
 }
 
 .carousel-controls button {
-  padding: 10px;
-  background-color: white;
+  border-radius: 5px 5px 5px 5px;
+  padding: 8px;
+  background-color: transparent;
 }
 
 .carousel-dots {
@@ -140,6 +146,88 @@ ul li ul:focus {
 .carousel-dots .inactive {
   border: 10px solid #2596be;
 }
+
+#conteudo{
+  height: 140vh;
+  
+  background-color: black;
+  display: flex;
+}
+
+#conteudo-e{
+  height:130vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#conteudo-text{
+  background-color: tomato;
+  width: 200px;
+  height: 150px;
+  display: flex;
+align-items: center
+
+}
+
+#conteudo-subtitle{
+  background-color: cadetblue;
+   width: 220px;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+#conteudo-subtitle2{
+  background-color: gray;
+  width: 20%;
+  height:30px;
+
+}
+
+#conteudo-description{
+background-color: green;
+width: 80%;
+height: 20vh;
+margin-right: 20px;
+margin-left: 20px;
+
+
+}
+
+
+  
+  
+  
+
+
+
+
+#conteudo-d{
+  background-color: yellow;
+  height:130vh;
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* FOOTER */
 
