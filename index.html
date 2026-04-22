@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon_io\apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_io\favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io\favicon-16x16.png">
-<link rel="manifest" href="favicon_io\site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io\favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io\favicon-16x16.png">
+  <link rel="manifest" href="favicon_io\site.webmanifest">
 
   <link rel="stylesheet" href="style.css" />
   <script src="app.js" async></script>
@@ -15,28 +16,29 @@
   </style>
   <title>Waves</title>
 </head>
+
 <body>
   <div class="navbar">
-<nav>
-  <ul>
-    <li><a  href="#">Home</a></li>
-    <Li><a  href="#">Contatos</a></Li>
-    <li><a  href="#">Informações</a></li>
-  </ul>
-</nav>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <Li><a href="#">Contatos</a></Li>
+        <li><a href="#">Informações</a></li>
+      </ul>
+    </nav>
 
 
 
-</div>
+  </div>
   <header>
-    
+
     <svg viewbox="0 0 100 12">
       <defs>
         <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
           <stop offset="5%" stop-color="#326384" />
           <stop offset="5%" stop-color="#123752" />
         </linearGradient>
-        <pattern id="wave" x="0" y="0" width="100" height="60" patternUnits="userSpaceOnUse">
+        <pattern id="wave" x="0" y="0" width="100" height="60" gap-top="10px" patternUnits="userSpaceOnUse">
           <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V120 H-40z"
             mask="url(#mask)" fill="url(#gradient)">
             <animateTransform attributeName="transform" begin="0s" dur="1.5s" type="translate" from="0,0" to="40,0"
@@ -48,7 +50,7 @@
       <text text-anchor="middle" x="50" y="10" font-size="9" fill="url(#gradient)" fill-opacity="0.5">Waves</text>
     </svg>
   </header>
-  
+
   <div class="container">
     <div class="carousel">
       <div class="carousel-inner">
@@ -84,40 +86,46 @@
       </div>
       <div class="carousel-dots"></div>
     </div>
-    </div>
+  </div>
   <div id="conteudo-total">
-      <div id="conteudo-e">
+    <div id="conteudo-e">
 
-          <h1 id="conteudo-text">Lorem Ipsum</h1>
-          
-          <h4 id="conteudo-subtitle">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h4>
-          
-          <h4 id="conteudo-subtitle2">"Não há ninguém que ame a dor por si só, que a busque e queira tê-la, simplesmente por ser dor..."</h4>
-          
-          <h4 id="conteudo-description">Sed aliquam, tellus eu pharetra lacinia, nunc turpis lacinia turpis, sit amet porta mauris dolor sed eros.
-            Pellentesque euismod rhoncus libero, auctor condimentum erat imperdiet vitae. Phasellus pulvinar ipsum id ante 
-            tristique, eget venenatis sapien vehicula. Nunc urna mi, interdum ac commodo vel, porta non tortor.</h4>   
-      </div>
+      <h1 id="conteudo-text">Lorem Ipsum</h1>
+
+      <h4 id="conteudo-subtitle">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+        velit..."</h4>
+
+      <h4 id="conteudo-subtitle2">"Não há ninguém que ame a dor por si só, que a busque e queira tê-la, simplesmente por
+        ser dor..."</h4>
+
+      <h4 id="conteudo-description">Sed aliquam, tellus eu pharetra lacinia, nunc turpis lacinia turpis, sit amet porta
+        mauris dolor sed eros.
+        Pellentesque euismod rhoncus libero, auctor condimentum erat imperdiet vitae. Phasellus pulvinar ipsum id ante
+        tristique, eget venenatis sapien vehicula. Nunc urna mi, interdum ac commodo vel, porta non tortor.</h4>
+    </div>
 
     <div id="conteudo-d"> BLOCO DIREITO
 
 
-      
 
 
+
+
+    </div>
 
   </div>
 
-</div>
-
   <footer id="footer">
-    <div id="bloco1">        
+    <div id="bloco1">
       <h3>Atendimento</h3>
-        <p>Segunda a Sexta: 9H às 19H</p>
-        <p>Sabado: 9H às 14H</p>  
+      <p>Segunda a Sexta: 9H às 19H</p>
+      <p>Sabado: 9H às 14H</p>
       <p>© 2026 Nome da Empresa. Todos os direitos reservados.</p>
     </div>
-    <div id="bloco2"> <iframe id="mapa"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220895.4093724512!2d-51.34195302639779!3d-30.108767184519355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95199cd2566acb1d%3A0x603111a89f87e91f!2sPorto%20Alegre%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1773347687372!5m2!1spt-BR!2sbr" width="250" height="200" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div id="bloco2"> <iframe id="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220895.4093724512!2d-51.34195302639779!3d-30.108767184519355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95199cd2566acb1d%3A0x603111a89f87e91f!2sPorto%20Alegre%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1773347687372!5m2!1spt-BR!2sbr"
+        width="250" height="200" style="border:1;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </div>
     <div id="bloco3"><a class="floater-whatsapp" title="WhatsApp" href="https://wa.me/5551983552704"><svg
@@ -129,7 +137,8 @@
             d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28">
           </path>
         </svg></a>
-      </div>
+    </div>
   </footer>
 </body>
+
 </html>
