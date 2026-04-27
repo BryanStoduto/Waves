@@ -1,89 +1,84 @@
 (function () {
+    "use strict";
 
-    "use strict"
-
-    // constante duração de cada slide
     const slideTimeout = 5000;
 
-    //botões de navegação
     const prev = document.querySelector('#prev');
     const next = document.querySelector('#next');
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.carousel-dots');
 
-    // todos os elementos do tipo "slide"
-    const $slides = document.querySelectorAll('.slide');
-
-    let $dots;
-
-    // variável para o intervalo de exibição dos slides
+    let dots;
     let intervalId;
-
-    // Inicialização do slide atual como 1
-    let currentSlide = 1;
+    let currentSlide = 0;
 
     function slideTo(index) {
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
 
-        currentSlide = index >= $slides.length || index < 1 ? 0 : index;
+        currentSlide = index;
 
-        $slides.forEach($elt => $elt.style.transform = `translateX(-${currentSlide * 100}%)`);
-
-        $dots.forEach(($elt, key) => $elt.classList = `dot ${key === currentSlide? 'active': 'inactive'}`);
-    }
-
-    // Função para exibir o próximo slide
-    function showSlide() {
-        slideTo(currentSlide);
-        currentSlide++;
-    }
-
-    // Loop para criar os "dots" com base na quantidade de slides
-    for (let i = 1; i <= $slides.length; i++) {
-        let dotClass = i == currentSlide ? 'active' : 'inactive';
-        let $dot = `<span data-slidId="${i}" class="dot ${dotClass}"></span>`;
-        document.querySelector('.carousel-dots').innerHTML += $dot;
-    }
-
-    $dots = document.querySelectorAll('.dot');
-
-    // Loop para adicionar eventos de clique
-    $dots.forEach(($elt, key) => $elt.addEventListener('click', () => slideTo(key)));
-
-    // Adiciona um evento de clique no botão "prev" para mostrar o slide anterior
-    prev.addEventListener('click', () => slideTo(--currentSlide))
-
-    // Adiciona um evento de clique no botão "next" para mostrar o próximo slide
-    next.addEventListener('click', () => slideTo(++currentSlide))
-
-    // Inicializa o intervalo para exibir os slides automaticamente
-    intervalId = setInterval(showSlide, slideTimeout)
-
-    // Loop em todos os slides para adicionar eventos de interação com mouse e toque
-    $slides.forEach($elt => {
-
-        let startX;
-        let endX;
-
-        $elt.addEventListener('mouseover', () => {
-            clearInterval(intervalId);
-        }, false)
-
-        $elt.addEventListener('mouseout', () => {
-            intervalId = setInterval(showSlide, slideTimeout);
-        }, false);
-
-        $elt.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].clientX;
+        slides.forEach(slide => {
+            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
         });
 
-        $elt.addEventListener('touchend', (event) => {
-            endX = event.changedTouches[0].clientX;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+            dot.classList.toggle('inactive', i !== currentSlide);
+        });
+    }
+
+    function showSlide() {
+        slideTo(currentSlide + 1);
+    }
+
+    // Criar dots
+    let dotsHTML = '';
+    for (let i = 0; i < slides.length; i++) {
+        dotsHTML += `<span class="dot ${i === 0 ? 'active' : 'inactive'}"></span>`;
+    }
+    dotsContainer.innerHTML = dotsHTML;
+
+    dots = document.querySelectorAll('.dot');
+
+    // Eventos dos dots
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => slideTo(i));
+    });
+
+    // Botões
+    prev.addEventListener('click', () => slideTo(currentSlide - 1));
+    next.addEventListener('click', () => slideTo(currentSlide + 1));
+
+    // Auto play
+    intervalId = setInterval(showSlide, slideTimeout);
+
+    // Interações
+    slides.forEach(slide => {
+        let startX = 0;
+        let endX = 0;
+
+        slide.addEventListener('mouseover', () => {
+            clearInterval(intervalId);
+        });
+
+        slide.addEventListener('mouseout', () => {
+            intervalId = setInterval(showSlide, slideTimeout);
+        });
+
+        slide.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slide.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
 
             if (startX > endX) {
                 slideTo(currentSlide + 1);
-
             } else if (startX < endX) {
                 slideTo(currentSlide - 1);
             }
         });
-    })
+    });
 
-})()
+})();
